@@ -1,8 +1,11 @@
 const remote = require('electron').remote;
 const window = remote.getCurrentWindow();
-const counter = document.getElementById('counter');
+
 const express = require('express');
 const app = express();
+
+const progress = document.getElementById('progress');
+const counter = document.getElementById('counter');
 
 var num = 0;
 var max = 0;
@@ -10,8 +13,8 @@ var max = 0;
 document.getElementById('reset').addEventListener('click', (e) => {
     num = 0;
     max = 0;
-    counter.innerHTML = '0%';
-    work.innerHTML = '' + max;
+    progress.innerHTML = '0%';
+    counter.innerHTML = '' + max;
 });
 
 document.getElementById('close').addEventListener('click', (e) => {
@@ -25,8 +28,8 @@ document.getElementById('dev').addEventListener('click', (e) => {
 function updateValue() {
     if(max == 0) return;
     const val = parseInt((num / max) * 100);
-    counter.innerHTML = val + '%';
-    work.innerHTML = '' + max;
+    progress.innerHTML = val + '%';
+    counter.innerHTML = '' + max;
 }
 
 app.get('/add', function (req, res) {
