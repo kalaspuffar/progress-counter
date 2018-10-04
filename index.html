@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Progress counter</title>
+  </head>
+  <style>
+    body, html {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 95vh;
+      font-size: 50pt;
+    }
+
+    .buttonbar {
+      height: 100px;
+      width: 100vw;
+    }
+
+    button {
+      background: white;
+      border: 1px solid #000;
+      vertical-align: top;
+      margin: 5px;
+      padding: 4px;
+      font-size: 12pt;
+
+    }
+  </style>
+  <body>
+
+    <div class="content">
+      <span id="counter">0%</span>
+    </div>
+
+    <div class="buttonbar">
+        <button id="reset">Reset</button>
+        <button id="close">Close</button>
+        <button id="dev">Dev</button>
+    </div>
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+  </body>
+</html>
