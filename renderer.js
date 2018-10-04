@@ -11,6 +11,7 @@ document.getElementById('reset').addEventListener('click', (e) => {
     num = 0;
     max = 0;
     counter.innerHTML = '0%';
+    work.innerHTML = '' + max;
 });
 
 document.getElementById('close').addEventListener('click', (e) => {
@@ -25,6 +26,7 @@ function updateValue() {
     if(max == 0) return;
     const val = parseInt((num / max) * 100);
     counter.innerHTML = val + '%';
+    work.innerHTML = '' + max;
 }
 
 app.get('/add', function (req, res) {
